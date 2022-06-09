@@ -1,0 +1,76 @@
+# Oregon Trail - global variables
+
+#CONSTANTS - You shouldn't need to change these
+MILES_FROM_MO_TO_OR = 2000
+MONTH_NAMES = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+MONTH_DAYS = [31,28,31,30,31,30,31,31,30,31,30,31]
+STARTING_FOOD = 500
+MAX_HEALTH = 5
+# Add more constants if you need them
+
+#Variables - Things that will change over the course of the program
+CurrentFood = STARTING_FOOD
+CurrentHealth = MAX_HEALTH
+CurrentMonth = 0
+CurrentDay = 1
+Game_is_running = True
+# etc
+
+
+
+
+def add_day():
+  global MONTH_NAMES
+  global MONTH_DAYS
+  global CurrentMonth
+  global CurrentDay
+  global CurrentFood
+  global CurrentHealth
+  global MAX_HEALTH
+  global Game_is_running
+  
+  CurrentDay += 1
+  if CurrentDay > MONTH_DAYS[CurrentMonth]:           # Checks for max days in the current month
+    CurrentMonth += 1
+    CurrentDay = 1
+  CurrentFood -= 5
+  #  CurrentHealth -=  # subtract health from CheckHealth function - return of zero means no health is lost
+  
+  
+  Game_is_running = False                             # This happens if food or health goes to 0 or below
+  
+  
+def SickPredictor():
+  import random
+  global MONTH_NAMES
+  global MONTH_DAYS
+  global CurrentMonth
+  global CurrentDay
+  global CurrentFood
+  global CurrentHealth
+  global MAX_HEALTH
+  global Game_is_running
+
+  SickMonthDays = []
+  
+  for month in range(len(MONTH_NAMES)):
+    RunThru = True
+    while RunThru == True:
+      SickMonthDays.append(str(month+1) + '-' + str(random.randint(1,MONTH_DAYS[month])))     # picks a random day in a month to be sick (2-12) is feb 12
+      SickMonthDays.append(str(month+1) + '-' + str(random.randint(1,MONTH_DAYS[month])))     # picks another random day in the same month to be sick (2-12) is feb 12
+      if SickMonthDays[-1] == [-2]:
+        SickMonthDays = SickMonthDays[:-2]
+        RunThru = True
+      RunThru = False  
+      
+  return SickMonthDays
+    
+def CheckHealth():
+  global MONTH_NAMES
+  global MONTH_DAYS
+  global CurrentMonth
+  global CurrentDay
+  global CurrentFood
+  global CurrentHealth
+  global MAX_HEALTH
+  global Game_is_running  
