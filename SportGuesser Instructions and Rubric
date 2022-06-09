@@ -1,0 +1,47 @@
+# Instructions  
+
+ You will be creating a program that asks the user some questions and figures out which team sport the user is thinking of.
+
+ The first question the program should ask is how many players are on the field for each team.
+
+ **Planning for Success**
+ Start with only one sport and one if statement to see if you are printing things correctly
+
+ Then you can move on and add these sports:
+
+ |Sport        |Players|
+ |-------------|-------|
+|Volleyball|6|
+|Water Polo|7|
+|Baseball|9|
+Soccer|11
+American Football|11
+
+For this set of sports if they answer '11' for the number of players you will need to ask another question to distingush between Soccer and American Football.
+
+
+ Once you have the above sports added into your program, add these as well:
+
+|Sport        |Players|
+ |-------------|-------|
+|Sepak Takraw|3|
+|Curling|4|
+|Dodgeball|6|
+Handball|7|
+Quidditch|7
+|Basketball|5|
+|Ice Hockey|6|
+|Softball|9|
+|Cricket|11|
+
+**For Extra Credit - Learn about a few more sports and include them!**
+
+ 
+  # Rubric:
+  Criteria        |Points|
+ |-------------|-------|
+|Program explains to user how it works|1|
+|The program can successfully determine which of the 14 different sports the user is thinking of|10|
+|The program is clear and easy to use|3|
+Useful comments are used in the program|2
+Total|16
